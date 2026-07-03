@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfólio — Talles Henrique</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDEAE1;
+    --paper-dim:#E3DFD2;
+    --ink:#1C1B18;
+    --ink-soft:#514E45;
+    --charcoal:#211F1C;
+    --amber:#AD7A2E;
+    --amber-deep:#8C5F1E;
+    --teal:#3E6B65;
+    --line:#C9C2AF;
+    --line-soft:#DAD5C7;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--charcoal);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .letterbox-top, .letterbox-bottom{
+    background:var(--charcoal);
+    color:#8A8577;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 22px;
+  }
+  .rec{color:var(--amber); display:flex; align-items:center; gap:6px;}
+  .rec::before{
+    content:"";
+    width:6px; height:6px; border-radius:50%;
+    background:var(--amber);
+    display:inline-block;
+    animation:pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+  @media (max-width:600px){
+    .letterbox-top span:nth-child(2), .letterbox-bottom span:nth-child(2){display:none;}
+  }
+
+  .frame{
+    max-width:1040px;
+    margin:0 auto;
+    background:var(--paper);
+    box-shadow:0 30px 80px rgba(0,0,0,.35);
+  }
+
+  .back{
+    display:block;
+    padding:16px 64px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    text-decoration:none;
+    border-bottom:1px solid var(--line);
+  }
+  .back:hover{color:var(--amber-deep);}
+  @media (max-width:700px){ .back{padding:14px 26px;} }
+
+  .hero{
+    padding:52px 64px 40px;
+    border-bottom:1px solid var(--line);
+  }
+  @media (max-width:700px){ .hero{padding:38px 26px 30px;} }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--amber-deep);
+    margin-bottom:14px;
+  }
+  h1{
+    font-family:'Big Shoulders Display',sans-serif;
+    font-weight:800;
+    font-size:clamp(38px,6vw,64px);
+    line-height:.95;
+    letter-spacing:-.01em;
+    margin:0 0 16px;
+    text-transform:uppercase;
+    max-width:16ch;
+  }
+  .hero p{
+    font-size:16px;
+    line-height:1.7;
+    color:var(--ink-soft);
+    max-width:56ch;
+    margin:0;
+  }
+
+  main{padding:0 64px;}
+  @media (max-width:700px){ main{padding:0 26px;} }
+
+  section{padding:44px 0; border-bottom:1px solid var(--line-soft);}
+  section:last-of-type{border-bottom:none;}
+  .sec-head{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    margin-bottom:8px;
+  }
+  .sec-tag{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    color:var(--amber-deep);
+    letter-spacing:.05em;
+    flex-shrink:0;
+  }
+  .sec-title{
+    font-family:'Big Shoulders Display',sans-serif;
+    font-weight:700;
+    font-size:26px;
+    text-transform:uppercase;
+    letter-spacing:.02em;
+  }
+  .sec-rule{flex:1; height:1px; background:var(--line);}
+  .sec-sub{
+    font-size:14px;
+    color:var(--ink-soft);
+    margin:0 0 26px;
+    max-width:56ch;
+  }
+
+  .video-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(220px,1fr));
+    gap:26px;
+  }
+  .video-card{
+    background:var(--paper-dim);
+    border:1px solid var(--line);
+  }
+  .video-frame{
+    position:relative;
+    width:100%;
+    aspect-ratio:9/16;
+    background:#000;
+    overflow:hidden;
+  }
+  .video-frame iframe{
+    position:absolute; top:0; left:0;
+    width:100%; height:100%;
+    border:0;
+  }
+  .video-meta{padding:14px 16px 16px;}
+  .video-title{font-size:14px; font-weight:600; line-height:1.3;}
+  .video-tag{
+    display:inline-block;
+    margin-top:8px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10px;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    color:var(--amber-deep);
+    background:rgba(173,122,46,.1);
+    padding:3px 8px;
+    border-radius:2px;
+  }
+
+  /* Script excerpt */
+  .script-card{
+    background:var(--charcoal);
+    color:var(--paper);
+    padding:36px 40px;
+    position:relative;
+  }
+  @media (max-width:700px){ .script-card{padding:28px 22px;} }
+  .script-label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10.5px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--amber);
+    margin-bottom:18px;
+  }
+  .script-title{
+    font-family:'Big Shoulders Display',sans-serif;
+    font-size:26px;
+    text-transform:uppercase;
+    font-weight:700;
+    margin:0 0 22px;
+  }
+  .script-body{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    line-height:1.85;
+    color:#C9C4B4;
+    white-space:pre-wrap;
+  }
+  .script-body .scene-head{color:var(--amber); font-weight:500;}
+  .script-body .char{color:var(--paper); font-weight:500;}
+  .fade{
+    position:relative;
+    margin-top:6px;
+    padding-top:22px;
+    border-top:1px dashed #4A473E;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;
+    color:#8A8577;
+    letter-spacing:.03em;
+  }
+
+  .cta{
+    padding:56px 64px 60px;
+    background:var(--charcoal);
+    color:var(--paper);
+    text-align:center;
+  }
+  @media (max-width:700px){ .cta{padding:44px 26px 48px;} }
+  .cta-eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--amber);
+    margin-bottom:14px;
+  }
+  .cta h2{
+    font-family:'Big Shoulders Display',sans-serif;
+    font-size:clamp(28px,4.2vw,44px);
+    text-transform:uppercase;
+    font-weight:700;
+    margin:0 0 14px;
+    line-height:1.05;
+  }
+  .cta p{
+    color:#B8B3A4;
+    font-size:15px;
+    max-width:48ch;
+    margin:0 auto 30px;
+    line-height:1.6;
+  }
+  .cta-buttons{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+  .btn{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    text-decoration:none;
+    padding:14px 26px;
+    border-radius:2px;
+    display:inline-block;
+    transition:transform .15s ease, opacity .15s ease;
+  }
+  .btn-primary{background:var(--amber); color:var(--charcoal); font-weight:600;}
+  .btn-secondary{border:1px solid #4A473E; color:var(--paper);}
+  .btn:hover, .btn:focus-visible{transform:translateY(-2px); opacity:.92;}
+  .cta-contacts{
+    margin-top:30px; font-size:12.5px; color:#8A8577;
+    display:flex; gap:22px; justify-content:center; flex-wrap:wrap;
+  }
+  .cta-contacts a{color:#B8B3A4; text-decoration:none;}
+  .cta-contacts a:hover{color:var(--amber);}
+</style>
+</head>
+<body>
+
+  <div class="letterbox-top">
+    <span class="rec">REC</span>
+    <span>TALLES HENRIQUE — PORTFÓLIO</span>
+    <span>2.39:1</span>
+  </div>
+
+  <div class="frame">
+    <a class="back" href="index.html">← Voltar ao currículo</a>
+
+    <div class="hero">
+      <div class="eyebrow">Seleção de cortes</div>
+      <h1>Alguns dos<br>melhores cortes</h1>
+      <p>Esta é uma seleção — não o catálogo completo. Cada peça aqui foi escolhida pra mostrar como penso conversão, campanha e conteúdo do roteiro ao corte final. O resto eu mostro numa conversa.</p>
+    </div>
+
+    <main>
+
+      <section>
+        <div class="sec-head">
+          <span class="sec-tag">01</span>
+          <span class="sec-title">Conversão</span>
+          <span class="sec-rule"></span>
+        </div>
+        <p class="sec-sub">Vídeos pensados pra vender — hook forte, argumento direto, CTA claro.</p>
+        <div class="video-grid">
+          <div class="video-card">
+            <div class="video-frame">
+              <iframe src="https://www.youtube.com/embed/NdXFR9u_QXU" title="Copa do Mundo — Viviane Avalone" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="video-meta">
+              <div class="video-title">Copa do Mundo — Viviane Avalone</div>
+              <span class="video-tag">Conversão</span>
+            </div>
+          </div>
+          <div class="video-card">
+            <div class="video-frame">
+              <iframe src="https://www.youtube.com/embed/vIRo8Y2JYOA" title="América-MG e ManClub" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="video-meta">
+              <div class="video-title">América-MG e ManClub</div>
+              <span class="video-tag">Conversão</span>
+            </div>
+          </div>
+          <div class="video-card">
+            <div class="video-frame">
+              <iframe src="https://www.youtube.com/embed/viQFJEMo6w8" title="ManClub" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="video-meta">
+              <div class="video-title">ManClub</div>
+              <span class="video-tag">Conversão</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="sec-head">
+          <span class="sec-tag">02</span>
+          <span class="sec-title">Marketing de Conteúdo</span>
+          <span class="sec-rule"></span>
+        </div>
+        <p class="sec-sub">Conteúdo de marca pensado pra reter atenção e construir presença.</p>
+        <div class="video-grid">
+          <div class="video-card">
+            <div class="video-frame">
+              <iframe src="https://www.youtube.com/embed/2ivOMwEoQik" title="Marketing de Conteúdo 2 — ManClub" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="video-meta">
+              <div class="video-title">Marketing de Conteúdo 2 — ManClub</div>
+              <span class="video-tag">Marketing de Conteúdo</span>
+            </div>
+          </div>
+          <div class="video-card">
+            <div class="video-frame">
+              <iframe src="https://www.youtube.com/embed/E2NYTkEKLBg" title="Marketing de Conteúdo — ManClub" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="video-meta">
+              <div class="video-title">Marketing de Conteúdo — ManClub</div>
+              <span class="video-tag">Marketing de Conteúdo</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="sec-head">
+          <span class="sec-tag">03</span>
+          <span class="sec-title">Campanhas</span>
+          <span class="sec-rule"></span>
+        </div>
+        <p class="sec-sub">Ações de campanha com conceito próprio, do roteiro à direção.</p>
+        <div class="video-grid">
+          <div class="video-card">
+            <div class="video-frame">
+              <iframe src="https://www.youtube.com/embed/gB2tmFTeY1w" title="Campanha LiloCarnaval" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="video-meta">
+              <div class="video-title">Campanha LiloCarnaval</div>
+              <span class="video-tag">Campanhas</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="sec-head">
+          <span class="sec-tag">04</span>
+          <span class="sec-title">Roteiros</span>
+          <span class="sec-rule"></span>
+        </div>
+        <p class="sec-sub">Um trecho de roteiro autoral — do conceito à cena, escrito para ser filmado.</p>
+
+        <div class="script-card">
+          <div class="script-label">Roteiro — ManClub / Todos os produtos</div>
+          <div class="script-title">Hollywood — ManClub</div>
+          <div class="script-body"><span class="scene-head">HOOK — BANHEIRO</span>
+Hook.0 — médio, dolly, zoom out
+[Kadu aparando o amigo enquanto ele faz uma cara de satisfação]
+<span class="char">Kadu:</span> A ManClub já cuida das suas jóias há muito tempo.
+
+Hook.1 — médio, dolly, zoom out
+[Kadu levantando e ficando pertinho do ator]
+<span class="char">Kadu:</span> Mas, agora vamos cuidar de você todo. Até no banho...
+
+<span class="scene-head">CENA 1 — Casa + Dolly</span>
+1.0 — médio, dolly, pan lateral
+[Kadu andando pela casa vai falando]
+<span class="char">Kadu:</span> O desmatador todos já conhecem, o primeiro e único aparador à prova de cortes de verdade...</div>
+          <div class="fade">▸ continua por mais 8 cenas — roteiro completo sob pedido</div>
+        </div>
+      </section>
+
+      <section style="border-bottom:none;">
+        <div class="sec-head">
+          <span class="sec-tag">05</span>
+          <span class="sec-title">Outros</span>
+          <span class="sec-rule"></span>
+        </div>
+        <p class="sec-sub">Registros que não cabem em categoria fixa — bastidores, making-of, participações.</p>
+        <div class="video-grid">
+          <div class="video-card">
+            <div class="video-frame">
+              <iframe src="https://www.youtube.com/embed/8XFQxhJTaWg" title="Making-off ManClub & Danilo Gentili" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="video-meta">
+              <div class="video-title">Making-off ManClub &amp; Danilo Gentili</div>
+              <span class="video-tag">Outros</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <div class="cta">
+      <div class="cta-eyebrow">E tem mais</div>
+      <h2>Isso foi só um trailer.</h2>
+      <p>Tem muito mais corte guardado — e ideias novas pra conversa. Bora marcar 15 minutos e ver no que dá?</p>
+      <div class="cta-buttons">
+        <a class="btn btn-primary" href="https://wa.me/5531982258949" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+        <a class="btn btn-secondary" href="mailto:tallesctt@gmail.com">Enviar e-mail</a>
+      </div>
+      <div class="cta-contacts">
+        <a href="index.html">← Voltar ao currículo</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="letterbox-bottom">
+    <span>BELO HORIZONTE, MG</span>
+    <span>FILMMAKER · EDITOR · ROTEIRISTA</span>
+    <span id="year"></span>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
