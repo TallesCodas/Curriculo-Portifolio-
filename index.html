@@ -365,6 +365,41 @@
     .letterbox-top,.letterbox-bottom,.cta{display:none;}
     .frame{box-shadow:none;}
   }
+
+  /* ===== Mobile refinements ===== */
+  @media (max-width:480px){
+    .letterbox-top, .letterbox-bottom{padding:8px 16px; font-size:9px; letter-spacing:.1em;}
+    .scrubber{padding:22px 18px 16px;}
+    .hero{padding:30px 18px 26px;}
+    h1{letter-spacing:-.005em;}
+    .contact{font-size:13px; line-height:2;}
+    main{padding:0 18px 44px;}
+    .sec-head{flex-wrap:wrap; row-gap:6px;}
+    .sec-title{font-size:20px;}
+    .sec-rule{min-width:24px;}
+    .job-row{gap:8px;}
+    .job-time{font-size:10.5px; padding:3px 8px;}
+    .job-sub{padding-left:14px;}
+    .skill-groups{gap:22px 0;}
+    .chip{font-size:12.5px; padding:5px 10px;}
+    .langs{gap:28px;}
+    .cta{padding:36px 18px 40px;}
+    .cta-buttons{flex-direction:column; width:100%;}
+    .btn{width:100%; text-align:center;}
+    .cta-contacts{flex-direction:column; gap:10px;}
+  }
+
+  /* Respect reduced motion preference */
+  @media (prefers-reduced-motion:reduce){
+    .rec::before{animation:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  /* Visible keyboard focus */
+  a:focus-visible, .btn:focus-visible{
+    outline:2px solid var(--amber);
+    outline-offset:3px;
+  }
 </style>
 </head>
 <body>
