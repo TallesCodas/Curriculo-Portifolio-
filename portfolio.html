@@ -3,9 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfólio — Talles Henrique</title>
+<title>Portfólio — Talles Henrique · Filmmaker e Roteirista</title>
+<meta name="description" content="Portfólio de Talles Henrique: vídeos de conversão, marketing de conteúdo e campanhas, do roteiro ao corte final.">
+<meta name="theme-color" content="#211F1C">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Portfólio — Talles Henrique">
+<meta property="og:description" content="Vídeos de conversão, marketing de conteúdo e campanhas, do roteiro ao corte final.">
+<meta property="og:url" content="https://tallescodas.github.io/Curriculo-Portifolio-/portfolio.html">
+<meta property="og:image" content="https://i.ytimg.com/vi/NdXFR9u_QXU/hqdefault.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23211F1C'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23AD7A2E'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://i.ytimg.com">
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -16,9 +29,10 @@
     --charcoal:#211F1C;
     --amber:#AD7A2E;
     --amber-deep:#8C5F1E;
-    --teal:#3E6B65;
+    --on-amber:#14130F;
     --line:#C9C2AF;
     --line-soft:#DAD5C7;
+    --muted-dark:#8A8577;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -32,7 +46,7 @@
 
   .letterbox-top, .letterbox-bottom{
     background:var(--charcoal);
-    color:#8A8577;
+    color:var(--muted-dark);
     font-family:'IBM Plex Mono',monospace;
     font-size:10px;
     letter-spacing:.14em;
@@ -42,6 +56,7 @@
     align-items:center;
     padding:10px 22px;
   }
+  .letterbox-top span, .letterbox-bottom span{white-space:nowrap;}
   .rec{color:var(--amber); display:flex; align-items:center; gap:6px;}
   .rec::before{
     content:"";
@@ -63,8 +78,9 @@
   }
 
   .back{
-    display:block;
-    padding:16px 64px;
+    display:flex; align-items:center;
+    min-height:48px;
+    padding:0 64px;
     font-family:'IBM Plex Mono',monospace;
     font-size:11px;
     letter-spacing:.06em;
@@ -74,8 +90,9 @@
     border-bottom:1px solid var(--line);
   }
   .back:hover{color:var(--amber-deep);}
-  @media (max-width:700px){ .back{padding:14px 26px;} }
+  @media (max-width:700px){ .back{padding:0 26px;} }
 
+  /* ===== Hero ===== */
   .hero{
     padding:52px 64px 40px;
     border-bottom:1px solid var(--line);
@@ -92,25 +109,43 @@
   h1{
     font-family:'Big Shoulders Display',sans-serif;
     font-weight:800;
-    font-size:clamp(38px,6vw,64px);
-    line-height:.95;
+    font-size:clamp(42px,7vw,76px);
+    line-height:.92;
     letter-spacing:-.01em;
-    margin:0 0 16px;
+    margin:0 0 18px;
     text-transform:uppercase;
-    max-width:16ch;
   }
   .hero p{
     font-size:16px;
     line-height:1.7;
     color:var(--ink-soft);
-    max-width:56ch;
+    max-width:58ch;
     margin:0;
   }
+  .credit{margin-top:14px !important; font-size:14px !important; color:var(--ink) !important;}
+  .credit b{font-weight:600; border-left:3px solid var(--amber); padding-left:10px; display:inline-block;}
+  .credit b span{font-weight:400; color:var(--ink-soft);}
+  .jump{
+    display:flex; flex-wrap:wrap; gap:8px;
+    list-style:none; margin:26px 0 0; padding:0;
+  }
+  .jump a{
+    display:inline-flex; align-items:center; gap:8px;
+    min-height:40px; padding:0 14px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px; letter-spacing:.05em; text-transform:uppercase;
+    color:var(--ink); text-decoration:none;
+    border:1px solid var(--ink-soft);
+    border-radius:2px;
+  }
+  .jump a b{color:var(--amber-deep); font-weight:500;}
+  .jump a:hover, .jump a:focus-visible{background:var(--ink); color:var(--paper); border-color:var(--ink);}
+  .jump a:hover b, .jump a:focus-visible b{color:var(--amber);}
 
   main{padding:0 64px;}
   @media (max-width:700px){ main{padding:0 26px;} }
 
-  section{padding:44px 0; border-bottom:1px solid var(--line-soft);}
+  section{padding:44px 0; border-bottom:1px solid var(--line-soft); scroll-margin-top:12px;}
   section:last-of-type{border-bottom:none;}
   .sec-head{
     display:flex;
@@ -131,6 +166,7 @@
     font-size:26px;
     text-transform:uppercase;
     letter-spacing:.02em;
+    margin:0;
   }
   .sec-rule{flex:1; height:1px; background:var(--line);}
   .sec-sub{
@@ -140,6 +176,7 @@
     max-width:56ch;
   }
 
+  /* ===== Vídeos ===== */
   .video-grid{
     display:grid;
     grid-template-columns:repeat(auto-fill, minmax(220px,1fr));
@@ -148,7 +185,9 @@
   .video-card{
     background:var(--paper-dim);
     border:1px solid var(--line);
+    display:flex; flex-direction:column;
   }
+  .video-card.wide{grid-column:span 2;}
   .video-frame{
     position:relative;
     width:100%;
@@ -156,27 +195,68 @@
     background:#000;
     overflow:hidden;
   }
+  .wide .video-frame{aspect-ratio:16/9;}
+  .wide{align-self:start;}
   .video-frame iframe{
-    position:absolute; top:0; left:0;
+    position:absolute; inset:0;
     width:100%; height:100%;
     border:0;
   }
-  .video-meta{padding:14px 16px 16px;}
-  .video-title{font-size:14px; font-weight:600; line-height:1.3;}
-  .video-tag{
-    display:inline-block;
-    margin-top:8px;
-    font-family:'IBM Plex Mono',monospace;
-    font-size:10px;
-    letter-spacing:.05em;
-    text-transform:uppercase;
-    color:var(--amber-deep);
-    background:rgba(173,122,46,.1);
-    padding:3px 8px;
-    border-radius:2px;
+  /* Miniatura leve: o player do YouTube só carrega no clique */
+  .play{
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    padding:0; border:0; margin:0;
+    background:#000;
+    cursor:pointer;
+    display:block;
   }
+  .play img{
+    width:100%; height:100%;
+    object-fit:cover;
+    display:block;
+    opacity:.88;
+    transition:opacity .2s ease, transform .4s ease;
+  }
+  .play:hover img, .play:focus-visible img{opacity:1; transform:scale(1.03);}
+  .play-icon{
+    position:absolute; left:14px; bottom:14px;
+    width:52px; height:52px;
+    border-radius:50%;
+    background:var(--amber);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 6px 24px rgba(0,0,0,.4);
+    transition:transform .15s ease;
+  }
+  .play-icon::before{
+    content:"";
+    margin-left:4px;
+    border-style:solid;
+    border-width:9px 0 9px 15px;
+    border-color:transparent transparent transparent var(--on-amber);
+  }
+  .play:hover .play-icon, .play:focus-visible .play-icon{transform:scale(1.08);}
+  .play:focus-visible{outline:3px solid var(--amber); outline-offset:-3px;}
 
-  /* Script excerpt */
+  .video-meta{padding:14px 16px 16px; display:flex; flex-direction:column; gap:6px; flex:1;}
+  .video-title{font-size:14.5px; font-weight:600; line-height:1.3; margin:0;}
+  .video-desc{font-size:13px; line-height:1.5; color:var(--ink-soft); margin:0;}
+  .video-role{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10.5px; letter-spacing:.05em; text-transform:uppercase;
+    color:var(--amber-deep);
+  }
+  .yt-link{
+    margin-top:auto;
+    padding-top:6px;
+    display:inline-flex; align-items:center; min-height:32px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px; letter-spacing:.04em; text-transform:uppercase;
+    color:var(--ink-soft); text-decoration:none;
+  }
+  .yt-link:hover, .yt-link:focus-visible{color:var(--amber-deep); text-decoration:underline;}
+
+  /* ===== Roteiro ===== */
   .script-card{
     background:var(--charcoal);
     color:var(--paper);
@@ -205,20 +285,22 @@
     line-height:1.85;
     color:#C9C4B4;
     white-space:pre-wrap;
+    margin:0;
   }
   .script-body .scene-head{color:var(--amber); font-weight:500;}
   .script-body .char{color:var(--paper); font-weight:500;}
   .fade{
-    position:relative;
     margin-top:6px;
-    padding-top:22px;
+    padding-top:20px;
     border-top:1px dashed #4A473E;
+    display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px;
     font-family:'IBM Plex Mono',monospace;
     font-size:11.5px;
-    color:#8A8577;
+    color:var(--muted-dark);
     letter-spacing:.03em;
   }
 
+  /* ===== CTA ===== */
   .cta{
     padding:56px 64px 60px;
     background:var(--charcoal);
@@ -252,54 +334,81 @@
   .cta-buttons{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
   .btn{
     font-family:'IBM Plex Mono',monospace;
-    font-size:12.5px;
+    font-size:13.5px;
     letter-spacing:.05em;
     text-transform:uppercase;
     text-decoration:none;
     padding:14px 26px;
     border-radius:2px;
     display:inline-block;
-    transition:transform .15s ease, opacity .15s ease;
+    border:1px solid transparent;
+    transition:transform .15s ease, background-color .15s ease, border-color .15s ease;
   }
-  .btn-primary{background:var(--amber); color:var(--charcoal); font-weight:600;}
-  .btn-secondary{border:1px solid #4A473E; color:var(--paper);}
-  .btn:hover, .btn:focus-visible{transform:translateY(-2px); opacity:.92;}
+  .btn-primary{background:var(--amber); color:var(--on-amber); font-weight:600;}
+  .btn-primary:hover, .btn-primary:focus-visible{background:#C08A38;}
+  .btn-secondary{border-color:var(--muted-dark); color:var(--paper);}
+  .btn-secondary:hover, .btn-secondary:focus-visible{border-color:var(--paper);}
+  .btn-small{font-size:11.5px; padding:10px 16px;}
+  .btn:hover, .btn:focus-visible{transform:translateY(-2px);}
   .cta-contacts{
-    margin-top:30px; font-size:12.5px; color:#8A8577;
-    display:flex; gap:22px; justify-content:center; flex-wrap:wrap;
+    margin-top:26px; font-size:13px;
+    display:flex; gap:6px 22px; justify-content:center; flex-wrap:wrap;
   }
-  .cta-contacts a{color:#B8B3A4; text-decoration:none;}
-  .cta-contacts a:hover{color:var(--amber);}
+  .cta-contacts a{
+    display:inline-flex; align-items:center; min-height:40px;
+    color:#B8B3A4; text-decoration:none;
+    border-bottom:1px solid transparent;
+  }
+  .cta-contacts a:hover, .cta-contacts a:focus-visible{color:var(--amber); border-color:var(--amber);}
 
-  /* ===== Mobile refinements ===== */
+  /* ===== Celular: vídeos em carrossel deslizante ===== */
+  @media (max-width:600px){
+    .video-grid{
+      display:flex;
+      gap:14px;
+      overflow-x:auto;
+      scroll-snap-type:x mandatory;
+      margin:0 -26px; padding:0 26px 12px;
+      scroll-padding:0 26px;
+      -webkit-overflow-scrolling:touch;
+    }
+    .video-card{flex:0 0 72%; scroll-snap-align:start;}
+    .video-card.wide{flex-basis:88%; grid-column:auto;}
+    .swipe-hint{display:block !important;}
+  }
+  .swipe-hint{
+    display:none;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10.5px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--ink-soft); margin:-14px 0 14px;
+  }
   @media (max-width:480px){
     .letterbox-top, .letterbox-bottom{padding:8px 16px; font-size:9px; letter-spacing:.1em;}
-    .back{padding:12px 18px; font-size:10px;}
+    .back{padding:0 18px; font-size:10px;}
     .hero{padding:30px 18px 26px;}
     .hero p{font-size:14.5px;}
     main{padding:0 18px;}
+    .video-grid{margin:0 -18px; padding:0 18px 12px; scroll-padding:0 18px;}
     section{padding:32px 0;}
     .sec-head{flex-wrap:wrap; row-gap:6px;}
     .sec-title{font-size:20px;}
     .sec-rule{min-width:24px;}
-    .video-grid{grid-template-columns:repeat(auto-fill, minmax(150px,1fr)); gap:14px;}
-    .video-meta{padding:10px 12px 12px;}
-    .video-title{font-size:12.5px;}
     .script-card{padding:22px 16px;}
     .script-body{font-size:12px; line-height:1.75;}
     .script-title{font-size:21px;}
     .cta{padding:36px 18px 40px;}
     .cta-buttons{flex-direction:column; width:100%;}
-    .btn{width:100%; text-align:center;}
+    .cta-buttons .btn{width:100%; text-align:center;}
   }
 
-  /* Respect reduced motion preference */
   @media (prefers-reduced-motion:reduce){
     .rec::before{animation:none;}
     html{scroll-behavior:auto;}
+    .btn, .play img, .play-icon{transition:none;}
+    .btn:hover, .btn:focus-visible{transform:none;}
+    .play:hover img, .play:focus-visible img{transform:none;}
   }
 
-  /* Visible keyboard focus */
   a:focus-visible, .btn:focus-visible{
     outline:2px solid var(--amber);
     outline-offset:3px;
@@ -308,154 +417,149 @@
 </head>
 <body>
 
-  <div class="letterbox-top">
+  <div class="letterbox-top" aria-hidden="true">
     <span class="rec">REC</span>
     <span>TALLES HENRIQUE — PORTFÓLIO</span>
     <span>2.39:1</span>
   </div>
 
   <div class="frame">
-    <a class="back" href="index.html">← Voltar ao currículo</a>
+    <a class="back" href="index.html">← Ver currículo completo</a>
 
-    <div class="hero">
-      <div class="eyebrow">Seleção de cortes</div>
-      <h1>Alguns dos<br>melhores cortes</h1>
-      <p>Esta é uma seleção — não o catálogo completo. Cada peça aqui foi escolhida pra mostrar como penso conversão, campanha e conteúdo do roteiro ao corte final. O resto eu mostro numa conversa.</p>
-    </div>
+    <header class="hero">
+      <div class="eyebrow">Portfólio · Filmmaker · Editor · Roteirista</div>
+      <h1>Talles Henrique</h1>
+      <p>Uma seleção dos melhores cortes, não o catálogo completo. Cada peça foi escolhida pra mostrar como penso conversão, campanha e conteúdo, do roteiro ao corte final.</p>
+      <p class="credit"><b>Todas as peças: roteiro, captação e edição por mim, de ponta a ponta.<br><span>Veiculadas pela ManClub no Instagram, em anúncios pagos e no YouTube da marca.</span></b></p>
+      <ul class="jump" aria-label="Ir para a seção">
+        <li><a href="#conversao"><b>01</b> Conversão</a></li>
+        <li><a href="#conteudo"><b>02</b> Conteúdo</a></li>
+        <li><a href="#campanhas"><b>03</b> Campanhas &amp; bastidores</a></li>
+        <li><a href="#roteiros"><b>04</b> Roteiro</a></li>
+      </ul>
+    </header>
 
     <main>
 
-      <section>
+      <section id="conversao">
         <div class="sec-head">
           <span class="sec-tag">01</span>
-          <span class="sec-title">Conversão</span>
+          <h2 class="sec-title">Conversão</h2>
           <span class="sec-rule"></span>
         </div>
-        <p class="sec-sub">Vídeos pensados pra vender — hook forte, argumento direto, CTA claro.</p>
+        <p class="sec-sub">Vídeos pensados pra vender: hook forte, argumento direto, CTA claro.</p>
+        <p class="swipe-hint" aria-hidden="true">Deslize para ver mais →</p>
         <div class="video-grid">
-          <div class="video-card">
-            <div class="video-frame">
-              <iframe src="https://www.youtube.com/embed/NdXFR9u_QXU" title="Copa do Mundo — Viviane Avalone" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-            </div>
+          <article class="video-card">
+            <div class="video-frame" data-yt="NdXFR9u_QXU"></div>
             <div class="video-meta">
-              <div class="video-title">Copa do Mundo — Viviane Avalone</div>
-              <span class="video-tag">Conversão</span>
+              <h3 class="video-title">Copa do Mundo — Viviane Avalone</h3>
+              <span class="video-role">Roteiro · Captação · Edição</span>
+              <a class="yt-link" href="https://www.youtube.com/shorts/NdXFR9u_QXU" target="_blank" rel="noopener">Abrir no YouTube ↗</a>
             </div>
-          </div>
-          <div class="video-card">
-            <div class="video-frame">
-              <iframe src="https://www.youtube.com/embed/vIRo8Y2JYOA" title="América-MG e ManClub" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-            </div>
+          </article>
+          <article class="video-card">
+            <div class="video-frame" data-yt="vIRo8Y2JYOA"></div>
             <div class="video-meta">
-              <div class="video-title">América-MG e ManClub</div>
-              <span class="video-tag">Conversão</span>
+              <h3 class="video-title">América-MG × ManClub</h3>
+              <span class="video-role">Roteiro · Captação · Edição</span>
+              <a class="yt-link" href="https://www.youtube.com/shorts/vIRo8Y2JYOA" target="_blank" rel="noopener">Abrir no YouTube ↗</a>
             </div>
-          </div>
-          <div class="video-card">
-            <div class="video-frame">
-              <iframe src="https://www.youtube.com/embed/viQFJEMo6w8" title="ManClub" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-            </div>
+          </article>
+          <article class="video-card">
+            <div class="video-frame" data-yt="viQFJEMo6w8"></div>
             <div class="video-meta">
-              <div class="video-title">ManClub</div>
-              <span class="video-tag">Conversão</span>
+              <h3 class="video-title">ManClub — Anúncio de conversão</h3>
+              <span class="video-role">Roteiro · Captação · Edição</span>
+              <a class="yt-link" href="https://www.youtube.com/shorts/viQFJEMo6w8" target="_blank" rel="noopener">Abrir no YouTube ↗</a>
             </div>
-          </div>
+          </article>
         </div>
       </section>
 
-      <section>
+      <section id="conteudo">
         <div class="sec-head">
           <span class="sec-tag">02</span>
-          <span class="sec-title">Marketing de Conteúdo</span>
+          <h2 class="sec-title">Marketing de Conteúdo</h2>
           <span class="sec-rule"></span>
         </div>
         <p class="sec-sub">Conteúdo de marca pensado pra reter atenção e construir presença.</p>
+        <p class="swipe-hint" aria-hidden="true">Deslize para ver mais →</p>
         <div class="video-grid">
-          <div class="video-card">
-            <div class="video-frame">
-              <iframe src="https://www.youtube.com/embed/2ivOMwEoQik" title="Marketing de Conteúdo 2 — ManClub" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-            </div>
+          <article class="video-card">
+            <div class="video-frame" data-yt="2ivOMwEoQik"></div>
             <div class="video-meta">
-              <div class="video-title">Marketing de Conteúdo 2 — ManClub</div>
-              <span class="video-tag">Marketing de Conteúdo</span>
+              <h3 class="video-title">ManClub — Conteúdo de marca #2</h3>
+              <span class="video-role">Roteiro · Captação · Edição</span>
+              <a class="yt-link" href="https://www.youtube.com/shorts/2ivOMwEoQik" target="_blank" rel="noopener">Abrir no YouTube ↗</a>
             </div>
-          </div>
-          <div class="video-card">
-            <div class="video-frame">
-              <iframe src="https://www.youtube.com/embed/E2NYTkEKLBg" title="Marketing de Conteúdo — ManClub" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-            </div>
+          </article>
+          <article class="video-card">
+            <div class="video-frame" data-yt="E2NYTkEKLBg"></div>
             <div class="video-meta">
-              <div class="video-title">Marketing de Conteúdo — ManClub</div>
-              <span class="video-tag">Marketing de Conteúdo</span>
+              <h3 class="video-title">ManClub — Conteúdo de marca #1</h3>
+              <span class="video-role">Roteiro · Captação · Edição</span>
+              <a class="yt-link" href="https://www.youtube.com/shorts/E2NYTkEKLBg" target="_blank" rel="noopener">Abrir no YouTube ↗</a>
             </div>
-          </div>
+          </article>
         </div>
       </section>
 
-      <section>
+      <section id="campanhas">
         <div class="sec-head">
           <span class="sec-tag">03</span>
-          <span class="sec-title">Campanhas</span>
+          <h2 class="sec-title">Campanhas &amp; bastidores</h2>
           <span class="sec-rule"></span>
         </div>
-        <p class="sec-sub">Ações de campanha com conceito próprio, do roteiro à direção.</p>
+        <p class="sec-sub">Ações de campanha, conteúdo educativo e registros de produção com convidados.</p>
+        <p class="swipe-hint" aria-hidden="true">Deslize para ver mais →</p>
         <div class="video-grid">
-          <div class="video-card">
-            <div class="video-frame">
-              <iframe src="https://www.youtube.com/embed/nqSLodQqCK0" title="Afiliados ManClub — Aula" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-            </div>
+          <article class="video-card wide">
+            <div class="video-frame" data-yt="nqSLodQqCK0" data-wide></div>
             <div class="video-meta">
-              <div class="video-title">Afiliados ManClub — Aula</div>
-              <span class="video-tag">Campanhas</span>
+              <h3 class="video-title">Afiliados ManClub — Aula</h3>
+              <span class="video-role">Roteiro · Captação · Edição</span>
+              <a class="yt-link" href="https://www.youtube.com/watch?v=nqSLodQqCK0" target="_blank" rel="noopener">Abrir no YouTube ↗</a>
             </div>
-          </div>
+          </article>
+          <article class="video-card">
+            <div class="video-frame" data-yt="8XFQxhJTaWg"></div>
+            <div class="video-meta">
+              <h3 class="video-title">Making-of: ManClub &amp; Danilo Gentili</h3>
+              <span class="video-role">Roteiro · Captação · Edição</span>
+              <a class="yt-link" href="https://www.youtube.com/shorts/8XFQxhJTaWg" target="_blank" rel="noopener">Abrir no YouTube ↗</a>
+            </div>
+          </article>
         </div>
       </section>
 
-      <section>
+      <section id="roteiros">
         <div class="sec-head">
           <span class="sec-tag">04</span>
-          <span class="sec-title">Roteiros</span>
+          <h2 class="sec-title">Roteiro</h2>
           <span class="sec-rule"></span>
         </div>
-        <p class="sec-sub">Um trecho de roteiro autoral — do conceito à cena, escrito para ser filmado.</p>
+        <p class="sec-sub">Um trecho de roteiro autoral, do conceito à cena, escrito para ser filmado.</p>
 
         <div class="script-card">
           <div class="script-label">Roteiro — ManClub / Todos os produtos</div>
-          <div class="script-title">Hollywood — ManClub</div>
-          <div class="script-body"><span class="scene-head">HOOK — BANHEIRO</span>
+          <h3 class="script-title">Hollywood — ManClub</h3>
+<pre class="script-body"><span class="scene-head">HOOK — BANHEIRO</span>
 Hook.0 — médio, dolly, zoom out
 [Kadu aparando o amigo enquanto ele faz uma cara de satisfação]
-<span class="char">Kadu:</span> A ManClub já cuida das suas jóias há muito tempo.
+<span class="char">Kadu:</span> A ManClub já cuida das suas joias há muito tempo.
 
 Hook.1 — médio, dolly, zoom out
 [Kadu levantando e ficando pertinho do ator]
-<span class="char">Kadu:</span> Mas, agora vamos cuidar de você todo. Até no banho...
+<span class="char">Kadu:</span> Mas agora vamos cuidar de você todo. Até no banho...
 
 <span class="scene-head">CENA 1 — Casa + Dolly</span>
 1.0 — médio, dolly, pan lateral
 [Kadu andando pela casa vai falando]
-<span class="char">Kadu:</span> O desmatador todos já conhecem, o primeiro e único aparador à prova de cortes de verdade...</div>
-          <div class="fade">▸ continua por mais 8 cenas — roteiro completo sob pedido</div>
-        </div>
-      </section>
-
-      <section style="border-bottom:none;">
-        <div class="sec-head">
-          <span class="sec-tag">05</span>
-          <span class="sec-title">Outros</span>
-          <span class="sec-rule"></span>
-        </div>
-        <p class="sec-sub">Registros que não cabem em categoria fixa — bastidores, making-of, participações.</p>
-        <div class="video-grid">
-          <div class="video-card">
-            <div class="video-frame">
-              <iframe src="https://www.youtube.com/embed/8XFQxhJTaWg" title="Making-off ManClub & Danilo Gentili" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-            </div>
-            <div class="video-meta">
-              <div class="video-title">Making-off ManClub &amp; Danilo Gentili</div>
-              <span class="video-tag">Outros</span>
-            </div>
+<span class="char">Kadu:</span> O Desmatador todo mundo já conhece: o primeiro e único aparador à prova de cortes de verdade...</pre>
+          <div class="fade">
+            <span>▸ Continua por mais 8 cenas</span>
+            <a class="btn btn-secondary btn-small" id="script-req" href="mailto:tallesctt@gmail.com">Pedir roteiro completo</a>
           </div>
         </div>
       </section>
@@ -465,18 +569,19 @@ Hook.1 — médio, dolly, zoom out
     <div class="cta">
       <div class="cta-eyebrow">E tem mais</div>
       <h2>Isso foi só um trailer.</h2>
-      <p>Tem muito mais corte guardado — e ideias novas pra conversa. Bora marcar 15 minutos e ver no que dá?</p>
+      <p>Tem muito mais corte guardado, e ideias novas pra conversa. Bora marcar 15 minutos e ver no que dá?</p>
       <div class="cta-buttons">
-        <a class="btn btn-primary" href="https://wa.me/5531982258949" target="_blank" rel="noopener">Chamar no WhatsApp</a>
-        <a class="btn btn-secondary" href="mailto:tallesctt@gmail.com">Enviar e-mail</a>
+        <a class="btn btn-primary wa-link" href="https://wa.me/5531982258949" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+        <a class="btn btn-secondary mail-link" href="mailto:tallesctt@gmail.com">Enviar e-mail</a>
       </div>
       <div class="cta-contacts">
-        <a href="index.html">← Voltar ao currículo</a>
+        <a href="index.html">← Ver currículo</a>
+        <a href="https://www.youtube.com/@TallesFilmake" target="_blank" rel="noopener">Canal no YouTube ↗</a>
       </div>
     </div>
   </div>
 
-  <div class="letterbox-bottom">
+  <div class="letterbox-bottom" aria-hidden="true">
     <span>BELO HORIZONTE, MG</span>
     <span>FILMMAKER · EDITOR · ROTEIRISTA</span>
     <span id="year"></span>
@@ -484,6 +589,37 @@ Hook.1 — médio, dolly, zoom out
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mensagens pré-preenchidas
+    var waText = encodeURIComponent('Olá, Talles! Vi seu portfólio e gostaria de conversar sobre um projeto/vaga.');
+    document.querySelectorAll('.wa-link').forEach(function(a){ a.href = 'https://wa.me/5531982258949?text=' + waText; });
+    document.querySelectorAll('.mail-link').forEach(function(a){
+      a.href = 'mailto:tallesctt@gmail.com?subject=' + encodeURIComponent('Contato pelo portfólio — Talles Henrique');
+    });
+    document.getElementById('script-req').href = 'mailto:tallesctt@gmail.com?subject=' +
+      encodeURIComponent('Pedido de roteiro completo — Hollywood ManClub');
+
+    // Miniatura leve: troca pelo player do YouTube só quando a pessoa clica
+    document.querySelectorAll('.video-frame[data-yt]').forEach(function(box){
+      var id = box.getAttribute('data-yt');
+      var title = box.parentNode.querySelector('.video-title').textContent;
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'play';
+      btn.setAttribute('aria-label', 'Assistir: ' + title);
+      btn.innerHTML = '<img src="https://i.ytimg.com/vi/' + id + '/hqdefault.jpg" alt="" loading="lazy" decoding="async"><span class="play-icon" aria-hidden="true"></span>';
+      btn.addEventListener('click', function(){
+        var f = document.createElement('iframe');
+        f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0&playsinline=1';
+        f.title = title;
+        f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        f.allowFullscreen = true;
+        box.innerHTML = '';
+        box.appendChild(f);
+        f.focus();
+      });
+      box.appendChild(btn);
+    });
   </script>
 </body>
 </html>
